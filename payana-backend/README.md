@@ -1,73 +1,49 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+Desafío: Desarrollo de una encuesta en React con preguntas y valoraciones
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Descripción:
+Debes crear una aplicación web que permita a los usuarios responder una encuesta con preguntas y valoraciones del 1 al 5. El listado de preguntas será cargado desde un JSON mockeado. La aplicación debe cumplir con los siguientes requisitos:
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+- Mostrar una pregunta a la vez, con sus opciones de valoración del 1 al 5.
+- Permitir al usuario seleccionar una valoración para cada pregunta.
+- Mostrar la siguiente pregunta después de que el usuario haya respondido la actual.
+- Al finalizar la encuesta, mostrar un resumen con las respuestas del usuario.
+- Requisitos técnicos:
+- Utiliza React para construir la aplicación.
+- Para el CSS utilizar algún framework como Bootstrap o Material-UI.
 
-## Description
+Entrega:
+Una vez completado, puedes compartir tu solución proporcionando el código fuente en un repositorio de GitHub u otra plataforma de alojamiento de código. Asegúrate de incluir instrucciones claras sobre cómo ejecutar y probar la aplicación.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+¡Buena suerte en el desafío!
 
-## Installation
+JSON de ejemplo:
 
-```bash
-$ yarn install
-```
-
-## Running the app
-
-```bash
-# development
-$ yarn run start
-
-# watch mode
-$ yarn run start:dev
-
-# production mode
-$ yarn run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ yarn run test
-
-# e2e tests
-$ yarn run test:e2e
-
-# test coverage
-$ yarn run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+{
+  "preguntas": [
+    {
+      "id": 1,
+      "texto": "¿Qué tan satisfecho estás con el producto?",
+      "valoracion": 5
+    },
+    {
+      "id": 2,
+      "texto": "¿Cuál es tu opinión sobre el servicio al cliente?",
+      "valoracion": 5
+    },
+    {
+      "id": 3,
+      "texto": "¿Cómo calificarías la usabilidad del sitio web?",
+      "valoracion": 5
+    },
+    {
+      "id": 4,
+      "texto": "¿Recomendarías nuestro producto a otros?",
+      "valoracion": 5
+    },
+    {
+      "id": 5,
+      "texto": "¿Cómo evaluarías la calidad del producto?",
+      "valoracion": 5
+    }
+  ]
+}
