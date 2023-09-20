@@ -5,5 +5,6 @@ import { PayanaDbController } from './payana-db.controller';
 @Module({
   controllers: [PayanaDbController],
   providers: [PayanaDbService],
+  exports: [PayanaDbService],
 })
 export class PayanaDbModule {}

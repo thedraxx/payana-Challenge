@@ -1,1 +1,5 @@
-export class CreatePayanaDbDto {}
+export class CreatePayanaDbDto {
+  id: string;
+  texto: string;
+  valoracion: number;
+}

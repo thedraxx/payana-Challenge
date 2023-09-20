@@ -1,4 +1,4 @@
-import React from 'react'
+import Card from "./assets/components/Card/Card"
 
 const App = () => {
   return (
@@ -10,7 +10,17 @@ const App = () => {
         alignItems: 'center'
       }}
     >
-      example
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: 600
+        }}
+      >
+        Payana Challenge
+
+        <Card />
+      </h2>
+
     </div>
   )
 }

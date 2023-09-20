@@ -6,7 +6,7 @@ export class DatabaseController {
   constructor(private readonly databaseService: DatabaseService) {}
 
   @Get()
-  findAll() {
+  runSeed() {
     return this.databaseService.create();
   }
 }
