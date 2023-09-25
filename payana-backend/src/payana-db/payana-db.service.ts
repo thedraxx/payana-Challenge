@@ -58,16 +58,21 @@ export class PayanaDbService {
   }
 
   async update(id: string, updatePayanaDbDto: UpdatePayanaDbDto) {
+    const { valoracion } = updatePayanaDbDto;
+
+    if (valoracion < 0 || valoracion > 5) {
+      throw new BadRequestException('La valoracion debe estar entre 0 y 5');
+    }
+
     try {
-      const payanaDb = await this.isExistPayanaDb(id);
-      payanaDb.set({
-        ...updatePayanaDbDto,
-        valoracion: updatePayanaDbDto.valoracion,
-      });
-      return payanaDb.save();
+      const getDataPayanaDB = await this.isExistPayanaDb(id);
+      getDataPayanaDB.valoracion = valoracion;
+      getDataPayanaDB.save();
+
+      return getDataPayanaDB;
     } catch (error) {
       console.log(error);
-      throw new ExceptionsHandler(error);
+      throw new BadRequestException('A ocurrido un error, mirar consola');
     }
   }
 }
