@@ -1,29 +1,14 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Patch,
-  Param,
-  // Delete,
-} from '@nestjs/common';
+import { Controller, Get, Body, Patch, Param } from '@nestjs/common';
 import { PayanaDbService } from './payana-db.service';
-import { CreatePayanaDbDto } from './dto/create-payana-db.dto';
 import { UpdatePayanaDbDto } from './dto/update-payana-db.dto';
-//import { UpdatePayanaDbDto } from './dto/update-payana-db.dto';
-
+import { ParseMongoIdPipe } from 'src/common/pipes/parse-mongo-id/parse-mongo-id.pipe';
 @Controller('payana-db')
 export class PayanaDbController {
   constructor(private readonly payanaDbService: PayanaDbService) {}
 
-  @Post()
-  create(@Body() createPayanaDbDto: CreatePayanaDbDto[]) {
-    return this.payanaDbService.create(createPayanaDbDto);
-  }
-
   @Patch(':id')
   update(
-    @Param('id') id: string,
+    @Param('id', ParseMongoIdPipe) id: string,
     @Body() updatePayanaDbDto: UpdatePayanaDbDto,
   ) {
     return this.payanaDbService.update(id, updatePayanaDbDto);
@@ -31,27 +16,11 @@ export class PayanaDbController {
 
   @Get()
   findAll() {
-    return this.payanaDbService.findAll();
+    return this.payanaDbService.getAll();
   }
-
-  /**
-   * 
-   * 
-   * 
-
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.payanaDbService.findOne(+id);
+  findOne(@Param('id', ParseMongoIdPipe) id: string) {
+    return this.payanaDbService.findOne(id);
   }
-
- 
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.payanaDbService.remove(+id);
-  }
-   * 
-   * 
-   * / */
 }
